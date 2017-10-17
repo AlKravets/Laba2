@@ -2,6 +2,7 @@
 #include "Class.h"
 #include <string>
 using namespace std;
+int Test::Metod_multip = 2;
 
 int main()
 {

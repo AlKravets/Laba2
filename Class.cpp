@@ -9,7 +9,6 @@ static int base = 1073741824;
 static int outbase = 1000000000;
 
 
-
 Test::Test ()
 : array(NULL), size(0), znak(1) {}
 
@@ -430,9 +429,16 @@ void Test::operator -(const Test &b)
 	Normalize();
 
 }
+void Test::operator * (const Test &b)
+{
+	if (Test::Metod_multip == 1)
+		this->Standart_Metod(b);
+		if (Test::Metod_multip == 2)
+		this->Metod_Caracyba(b);
 
+}
 
-void Test::operator *(const Test &b)
+void Test::Standart_Metod(const Test &b)
 {
 	long long *c, k, k1;
 	long size_c, znak_c;
@@ -461,6 +467,8 @@ void Test::operator *(const Test &b)
 	Normalize();
 	znak = znak_c;
 }
+
+
 
 
 void Test::Metod_Caracyba (const Test & b)
@@ -516,10 +524,10 @@ void Test::Metod_Caracyba (const Test & b)
 	u10-u0;
 	//u10.Out_from_consol();
 	v01-v1;
-	u10*v01;
+	u10.Standart_Metod(v01);
 //	v01.Out_from_consol();
-	u1*v1;
-	u0*v0;
+	u1.Standart_Metod(v1);
+	u0.Standart_Metod(v0);
 	
 	u10+u0;
 	u10+u1;
@@ -579,9 +587,9 @@ void Test::Metod_Caracyba (const Test & b)
 		c[u1.size+2*r] = c[u1.size+2*r] +k;
 
 	
-	for (long i=0; i < size_c; i++)
+/*	for (long i=0; i < size_c; i++)
 		cout << c[i] << " # ";
-	cout << endl;
+	cout << endl; */
 	
 	znak = znak*b.znak;
 	size = size_c;

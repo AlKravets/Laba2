@@ -13,6 +13,7 @@ private:
     int znak;   //1 = + || -1 = -
     bool Pav0(const long long *,long);
 public:
+    static int Metod_multip;
     Test();
     ~Test();
     Test(string &);
@@ -28,6 +29,7 @@ public:
     void operator -(const Test &a);
     void Chast_nomal(long);
     void operator *(const Test &);
+    void Standart_Metod (const Test &);
     void Metod_Caracyba (const Test &);
 };
 
